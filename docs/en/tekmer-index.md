@@ -28,8 +28,6 @@ Tekmer HPC is a CPU-based high performance computing cluster designed for:
 - Parallel workloads (MPI / OpenMP)
 - Simulation, modeling, and data processing
 
-> Note: **Tekmer HPC currently does NOT provide GPU resources**
-
 ---
 
 ## Inspecting Cluster Resources
@@ -164,7 +162,6 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 ## Key Takeaways
 
-- Tekmer is CPU-only → optimize for CPU, not GPU
 - Use correct Slurm parameters
 - Respect NUMA and cache locality
 - Optimize total runtime (queue + execution)

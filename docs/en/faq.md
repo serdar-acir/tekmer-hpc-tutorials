@@ -3,14 +3,18 @@
 # Frequently Asked Questions (FAQ)
 
 ## How do I open a TEKMER HPC account?
+
 1. If you or your organization is not yet registered, please first contact TEKMER to initiate registration:  
-   https://tuzlatekmer.com/iletisim  
+   [https://tuzlatekmer.com/iletisim](https://tuzlatekmer.com/iletisim)
+
 2. Visit the user portal:  
-   https://tekmer.performetrica.com/  
-3. Click on **"Online Registration"** and complete the form.  
+   [https://tekmer.performetrica.com/](https://tekmer.performetrica.com/)
+
+3. Click on **"Online Registration"** and complete the form.
+
 4. Follow the instructions sent to your email to activate your account.
 
-For any issues, contact: contact@performetrica.com
+For any issues, contact: [contact@performetrica.com](mailto:contact@performetrica.com)
 
 ---
 
@@ -40,14 +44,18 @@ Include your username and request for account termination.
 ---
 
 ## My software is not available in the cluster. What can I do?
+
 Submit a software request via the user portal:  
-https://tekmer.performetrica.com/
+[https://tekmer.performetrica.com/](https://tekmer.performetrica.com/)
 
 Use the **"Software Request"** section.
 
 Requests are evaluated based on:
+
 - Licensing constraints
+
 - System compatibility
+
 - Resource impact
 
 ---
@@ -60,9 +68,13 @@ If additional verification is required, you may be contacted.
 ---
 
 ## What are the rules for using TEKMER HPC Center?
-Please refer to the **TEKMER HPC Usage Policy** document for detailed rules, including:
+Please refer to the [**TEKMER HPC Usage Policy**](HPC_Kullanim_Politikasi.md) document for detailed rules, including:
+
 - Acceptable use
+
 - Resource allocation
+
 - Security policies
+
 - User responsibilities
 

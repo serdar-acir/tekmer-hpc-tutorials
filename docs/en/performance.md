@@ -4,8 +4,6 @@
 
 ---
 
-## 🇬🇧 English Version
-
 ### Overview
 
 Performance in High Performance Computing (HPC) environments is defined by two key factors:
@@ -55,25 +53,36 @@ This determines everything.
 If your application is multi-threaded:
 
 ### Best Practice
+
 Keep all threads **within the same CPU socket** to:
+
 - Maximize cache usage
+
 - Avoid NUMA penalties
+
 - Reduce memory latency
 
 ### Example: Use 24 cores on a single CPU
 
 #### Command line:
+
 ```bash
 --ntasks=1 --cpus-per-task=24
+```
 
 ####Batch script:
+
+```bash
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=24
+```
+
 ###Important Considerations
 
-This request may increase queue wait time
 
-You are asking for a large contiguous resource block
+This request may increase queue wait time.
+
+You are asking for a large contiguous resource block.
 
 ##Scaling Strategy
 
@@ -81,7 +90,9 @@ If your application scales well:
 
 Gradually increase:
 
+```bash
 --cpus-per-task=N
+```
 
 Slurm default behavior:
 
@@ -94,16 +105,23 @@ Then spills over to next socket if needed
 
 Avoid scheduler ambiguity:
 
+```bash
 #SBATCH --cpu-bind=cores
+```
 
 or:
 
+```bash
 #SBATCH --hint=nomultithread
+```
+
 ###2. Control Thread Count in Application
 
 Set environment variables:
 
+```bash
 export OMP_NUM_THREADS=24
+```
 
 Mismatch between Slurm and application = performance loss
 
@@ -111,31 +129,43 @@ Mismatch between Slurm and application = performance loss
 
 Wrong:
 
+```bash
 --ntasks=24 --cpus-per-task=24   # 576 logical CPUs requested
+```
 
 Correct (for OpenMP):
 
+```bash
 --ntasks=1 --cpus-per-task=24
+```
+
 ##3. When NOT to Use This Approach
 
-Do NOT use --cpus-per-task if:
+Do NOT use **--cpus-per-task** if:
 
 Your workload is MPI-based
 
-Tasks are independent
+- Tasks are independent
 
-You need multi-node scaling
+- You need multi-node scaling
 
 Instead use:
 
+```bash
 --ntasks=N
-##4. Trade-off: Performance vs Queue Time
-Strategy	Result
-Large CPU block	Faster execution, longer wait
-Smaller allocation	Faster start, longer runtime
+```
+
+## 4. Trade-off: Performance vs Queue Time
+
+| Strategy             | Result                             |
+|----------------------|------------------------------------|
+| Large CPU block      | Faster execution, longer wait      |
+| Smaller allocation   | Faster start, longer runtime       |
 
 Best practice:
 
-Benchmark both approaches
+- Benchmark both approaches
 
-Optimize total turnaround time, not just runtime
+- Optimize total turnaround time, not just runtime
+
+

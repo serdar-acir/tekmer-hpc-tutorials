@@ -7,11 +7,15 @@
 This guide explains how to access and run jobs on the TEKMER HPC Cluster.
 
 It does NOT cover:
+
 - Basic Linux usage
+
 - Programming models such as MPI, OpenMP or CUDA
 
 Users are expected to have:
+
 - Basic Linux command-line knowledge
+
 - Familiarity with their applications
 
 ---
@@ -20,7 +24,7 @@ Users are expected to have:
 
 Access to TEKMER HPC is managed via the user portal:
 
-👉 https://tekmer.performetrica.com/
+👉 [https://tekmer.performetrica.com/](https://tekmer.performetrica.com/)
 
 ### Steps
 
@@ -30,7 +34,9 @@ Access to TEKMER HPC is managed via the user portal:
 4. Your HPC account will be automatically provisioned  
 
 Accounts may be:
+
 - Individual (R&D users)
+
 - Organization-based (universities, companies)
 
 ---
@@ -72,18 +78,20 @@ Login nodes are NOT for computation.
 ### Windows
 
 Use an SSH client such as:
+
 - MobaXterm  
+
 - PuTTY  
 
 After installing the client, connect using:
-username@login.tekmer.performetrica.com
+**username@login.tekmer.performetrica.com**
 
 
 ### Linux and macOS
 
 Use SSH from terminal:
 
-ssh username@login.tekmer.performetrica.com
+**ssh username@login.tekmer.performetrica.com**
 
 
 ---
@@ -94,28 +102,35 @@ When you login, you start in your home directory (`~`).
 
 ### Basic Commands
 
+```bash
 pwd # current directory
 ls # list files
 cd dir # change directory
 cd .. # parent directory
-
+```
 
 ### File Operations
+
+```bash
 mv file1 file2 # rename/move
 cp file1 dir/ # copy
-
+```
 
 ---
 
 ## Data Transfer
 
 ### Upload (local → cluster)
-scp file username@login.tekmer.performetrica.com:/path/
 
+```bash
+scp file username@login.tekmer.performetrica.com:/path/
+```
 
 ### Download (cluster → local)
-scp username@login.tekmer.performetrica.com:/path/file
 
+```bash
+scp username@login.tekmer.performetrica.com:/path/file
+```
 
 ---
 
@@ -133,11 +148,13 @@ Use terminal-based editors:
 
 Available software is managed via modules:
 
+```bash
 module avail
 module load <software>
-
+```
 
 For additional software:
+
 Submit a request via the portal.
 
 ---
@@ -148,19 +165,24 @@ All computations MUST be submitted via Slurm.
 
 ### Example Job Submission
 
+```bash
 sbatch job.sh
-
+```
 
 ### Useful Commands
 
-
+```bash
 squeue # list jobs
 scancel JOBID # cancel job
 sinfo # cluster status
+```
 
 Jobs are scheduled based on:
+
 - Resource availability  
+
 - Fair usage policies  
+
 - Priority  
 
 ---
@@ -178,7 +200,7 @@ Old or unused data may be deleted by administrators.
 ## Best Practices
 
 - Test jobs before scaling  
-- Use appropriate resources (CPU, memory, GPU)  
+- Use appropriate resources (CPU, memory)  
 - Avoid unnecessary large I/O operations  
 - Keep your directories organized  
 
@@ -188,5 +210,6 @@ Old or unused data may be deleted by administrators.
 
 For help and support:
 
-📧 contact@performetrica.com  
-🌐 https://tekmer.performetrica.com/
+📧 [contact@performetrica.com](mailto:contact@performetrica.com)  
+🌐 [Tekmer HPC Portal](https://tekmer.performetrica.com/)
+
