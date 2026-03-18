@@ -1,5 +1,6 @@
 site_name: TEKMER SuperComputing Center
 nav:
+  - Home: index.md
   - English:
       - Quickstart: en/index.md
       - Scheduling with Slurm: en/slurm.md
