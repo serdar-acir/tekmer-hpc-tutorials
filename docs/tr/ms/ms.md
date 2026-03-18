@@ -1,19 +1,33 @@
-[![Documentation Status](https://readthedocs.org/projects/su-hpc-tutorials/badge/?version=latest)](https://su-hpc-tutorials.readthedocs.io/en/latest/?badge=latest)
-# General Information
-3D graphical environment for molecular modeling.
+[![Dokümantasyon Durumu](https://readthedocs.org/projects/su-hpc-tutorials/badge/?version=latest)](https://su-hpc-tutorials.readthedocs.io/en/latest/?badge=latest)
 
-## Usage Information
-This software is NOT in public use. It is available on the following laboratory(s).
+# Genel Bilgi
 
-## Installation / Help
-Installation for Windows: Please click the Tutorial link. 
-The software can be used with both its own GUI or from the command line on the HPC login node.
+Moleküler modelleme için kullanılan 3 boyutlu grafiksel bir ortamdır.
 
-## Server(s) installed
-This software is installed on the HPC clusters. It can also be installed on any workstations and labtops.  This software is accesible from all HPC clusters along with all workstations and labtops.
+## Kullanım Bilgisi
 
-## Provider:
+Bu yazılım genel kullanıma açık DEĞİLDİR. Lisanslı laboratuvar(lar) kapsamında kullanılabilir.
+
+## Kurulum / Yardım
+
+Windows için kurulum talimatlarına Eğitim (Tutorial) sayfası üzerinden ulaşabilirsiniz.
+
+Yazılım:
+- Kendi grafik arayüzü (GUI) üzerinden  
+- veya HPC login node üzerinden komut satırı ile  
+
+kullanılabilir.
+
+## Kurulu Sistemler
+
+Bu yazılım TEKMER HPC kümesi üzerinde kuruludur. Ayrıca iş istasyonlarına ve dizüstü bilgisayarlara da kurulabilir.
+
+Yazılım, TEKMER HPC kümesi üzerinden ve lisanslı iş istasyonları/dizüstü bilgisayarlar üzerinden erişilebilir.
+
+## Sağlayıcı
+
 Accelrys Inc.
 
-## Platform(s): 
+## Desteklenen Platformlar
+
 Windows

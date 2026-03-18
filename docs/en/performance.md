@@ -1,25 +1,141 @@
+# HPC Performance Optimization Tips (Slurm-Based Workloads)
+
 [![Documentation Status](https://readthedocs.org/projects/su-hpc-tutorials/badge/?version=latest)](https://su-hpc-tutorials.readthedocs.io/en/latest/?badge=latest)
-# Performans Optimization Tips
-Defining performance in HPC platforms includes both the program execution in means of speed and the total wait time until your job is accepted for execution by the system.
 
-For HPC environments performance optimization is probably the most important aspect after the proper functioning of the code. For example, sharing the same CPU cache for tasks that communicate with other may eliminate significant interconnect delays hence improving the performance. And separating independent tasks with a memory intensive workload onto separate sockets with a wider memory bandwidth may lead to performance improvements, leading to faster results. All these can be achieved by using appropriate workload scheduler commands for your own workload.
+---
 
-In this short article I will talk about a few Slurm commands that you can play with to minimize both the computation time and the wait time.
+## 🇬🇧 English Version
 
+### Overview
 
-`** this article applies to linux batch scripts only`
+Performance in High Performance Computing (HPC) environments is defined by two key factors:
 
-Check if your tool is multi-threaded or not. If multi-threaded you probably will want to use the CPU cores on the same CPU, instead of separate CPUs, sockets or nodes.
-For example to use all the 24 cores on a single CPU, on the command line use:
+1. **Execution time** of your application  
+2. **Queue wait time** before your job starts running  
 
-`--ntasks=1 --cpus-per-task=24`
+Optimizing both is critical. A fast application that waits hours in the queue is still inefficient.
 
-,and in the batch script, this translates as:
+After ensuring correctness, **performance optimization is the most important step** in HPC usage.
 
-`#SBATCH --tasks-per-node=1`
+---
 
-`#SBATCH --cpus-per-task=24`
+### Key Concepts
 
-This may delay the execution of your script if your demanded resources are not available. 
-If multi-threaded and your tool scales well with the number of CPU cores, you may want to expand to the next available CPU on the same socket.
-The default binding strategy of slurm is to expand to the next CPU, you can safely increase `--cpus-per-task`.
+Efficient HPC usage depends on how well your workload matches the underlying hardware:
+
+- Tasks sharing CPU cache → **lower latency**
+- Memory-intensive workloads → **benefit from NUMA awareness**
+- Poor placement → **wasted CPU cycles and longer runtimes**
+
+Proper use of **Slurm scheduler parameters** allows you to control this behavior.
+
+---
+
+### Scope
+
+> **This guide applies to Linux batch jobs executed via Slurm**
+
+---
+
+## 1. Understand Your Application Type
+
+Before tuning anything, determine:
+
+### Is your application:
+- **Single-threaded?**
+- **Multi-threaded (OpenMP, shared memory)?**
+- **Distributed (MPI)?**
+
+This determines everything.
+
+---
+
+## 2. Multi-threaded Workloads (Shared Memory)
+
+If your application is multi-threaded:
+
+### Best Practice
+Keep all threads **within the same CPU socket** to:
+- Maximize cache usage
+- Avoid NUMA penalties
+- Reduce memory latency
+
+### Example: Use 24 cores on a single CPU
+
+#### Command line:
+```bash
+--ntasks=1 --cpus-per-task=24
+
+####Batch script:
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=24
+###Important Considerations
+
+This request may increase queue wait time
+
+You are asking for a large contiguous resource block
+
+##Scaling Strategy
+
+If your application scales well:
+
+Gradually increase:
+
+--cpus-per-task=N
+
+Slurm default behavior:
+
+Expands CPUs within the same socket first
+
+Then spills over to next socket if needed
+
+##Recommended Additions (Critical in Practice)
+###1. Explicit CPU Binding
+
+Avoid scheduler ambiguity:
+
+#SBATCH --cpu-bind=cores
+
+or:
+
+#SBATCH --hint=nomultithread
+###2. Control Thread Count in Application
+
+Set environment variables:
+
+export OMP_NUM_THREADS=24
+
+Mismatch between Slurm and application = performance loss
+
+###3. Avoid Oversubscription
+
+Wrong:
+
+--ntasks=24 --cpus-per-task=24   # 576 logical CPUs requested
+
+Correct (for OpenMP):
+
+--ntasks=1 --cpus-per-task=24
+##3. When NOT to Use This Approach
+
+Do NOT use --cpus-per-task if:
+
+Your workload is MPI-based
+
+Tasks are independent
+
+You need multi-node scaling
+
+Instead use:
+
+--ntasks=N
+##4. Trade-off: Performance vs Queue Time
+Strategy	Result
+Large CPU block	Faster execution, longer wait
+Smaller allocation	Faster start, longer runtime
+
+Best practice:
+
+Benchmark both approaches
+
+Optimize total turnaround time, not just runtime
