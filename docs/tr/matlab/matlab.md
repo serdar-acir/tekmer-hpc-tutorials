@@ -11,26 +11,33 @@ MATLAB, aşağıdaki alanlarda kullanılan yüksek seviyeli bir programlama ve s
 - Mühendislik ve bilimsel hesaplamalar  
 
 TEKMER HPC üzerinde MATLAB şu modlarda kullanılabilir:
+
 - **Etkileşimli mod** (test ve geliştirme)  
+
 - **Batch mod** (Slurm ile büyük işler)  
+
 - **Paralel mod** (Parallel Computing Toolbox ile)  
 
 ---
 
 ## Kurulum / Yardım
 
-Detaylı kurulum ve kullanım dokümanına buradan ulaşabilirsiniz:
+Detaylı kurulum ve kullanım dokümanına Kurulum Eğitimi tabından veya buradan ulaşabilirsiniz:
 
 👉 https://tekmer-hpc-tutorials.readthedocs.io/en/latest/matlab/pdf/matlab-tutorial.pdf
 
 İçerik:
+
 - Windows kurulum  
+
 - macOS kurulum  
+
 - Linux kurulum  
+
 - HPC kullanım örnekleri  
 
 Destek için:  
-📧 contact@performetrica.com  
+📧 [contact@performetrica.com](mailto:contact@performetrica.com)  
 
 ---
 
@@ -52,6 +59,7 @@ Destek için:
 module load matlab
 Etkileşimli Çalıştırma (sadece kısa testler için)
 matlab
+```
 
 ⚠️ Login node üzerinde yoğun hesaplama çalıştırmayınız.
 
@@ -59,6 +67,7 @@ matlab
 
 Örnek Slurm script:
 
+```bash
 #!/bin/bash
 #SBATCH -J matlab_job
 #SBATCH -N 1
@@ -68,6 +77,7 @@ matlab
 module load matlab
 
 matlab -nodisplay -r "my_script; exit"
+```
 
 Gönderim:
 
@@ -76,45 +86,49 @@ sbatch job.sh
 
 MATLAB paralel çalışmayı destekler:
 
-Parallel Computing Toolbox
+- Parallel Computing Toolbox
 
-parpool / parfor
+- parpool / parfor
 
-Dağıtık işler
+- Dağıtık işler
 
-Örnek:
+###Örnek:
 
 parpool(4);
+
 parfor i=1:100
+
     A(i) = heavy_function(i);
+
 end
+
 ###Toolbox Bilgisi
 
 Mevcut toolbox’lardan bazıları:
 
-MATLAB
+- MATLAB
 
-Simulink
+- Simulink
 
-Parallel Computing Toolbox
+- Parallel Computing Toolbox
 
-Deep Learning Toolbox
+- Deep Learning Toolbox
 
-Signal Processing Toolbox
+- Signal Processing Toolbox
 
-Optimization Toolbox
+- Optimization Toolbox
 
-Statistics and Machine Learning Toolbox
+- Statistics and Machine Learning Toolbox
 
-Computer Vision Toolbox
+- Computer Vision Toolbox
 
-Control System Toolbox
+- Control System Toolbox
 
-Image Processing Toolbox
+- Image Processing Toolbox
 
-Symbolic Math Toolbox
+- Symbolic Math Toolbox
 
-GPU Coder
+- GPU Coder
 
 (Lisansa bağlı olarak değişebilir.)
 
@@ -133,7 +147,7 @@ TEKMER HPC kullanım politikalarına uyulmalıdır
 MATLAB, TEKMER HPC kümesinde kuruludur.
 
 Kurum geneli erişim talepleri için:
-📧 contact@performetrica.com
+📧 [contact@performetrica.com](mailto:contact@performetrica.com)  
 
 ###Sağlayıcı
 
