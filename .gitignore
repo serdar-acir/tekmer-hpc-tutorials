@@ -1,0 +1,13 @@
+# OS / user garbage
+.*
+!.gitignore
+
+# Python / mkdocs
+__pycache__/
+*.pyc
+
+# Build output
+site/
+
+# Logs
+*.log

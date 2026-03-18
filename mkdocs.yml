@@ -1,0 +1,58 @@
+site_name: TEKMER SuperComputing Center
+nav:
+  - English:
+      - Quickstart: en/index.md
+      - Scheduling with Slurm: en/slurm.md
+      - Tutorials:
+          - Using TEKMER Cluster: en/tekmer-index.md
+          - Available Tools:
+              - Matlab:
+                  - General Information: en/matlab/matlab.md
+                  - Installation Tutorial: en/matlab/pdf/matlab-tutorial.pdf
+                  - Slurm Wrapper Files: en/matlab/pdf/matlab-parallel-slurm-plugin-main.zip
+              - Materials Studio:
+                  - General Information: en/ms/ms.md
+                  - Tutorial: en/ms/pdf/ms-tutorial.pdf
+              - Comsol:
+                  - General Information: en/comsol/comsol.md
+                  - Tutorial: en/comsol/pdf/comsol-tutorial.pdf
+              - Namd:
+                  - General Information: en/namd/namd.md
+                  - Tutorial: en/namd/pdf/namd-tutorial.pdf
+              - Tensorflow:
+                  - General Information: en/tensorflow/tensorflow.md
+                  - Tutorial: en/tensorflow/pdf/tensorflow-tutorial.pdf
+      - FAQ: en/faq.md
+      - Performance Optimization Tips: en/performance.md
+      - Usage Policy: en/HPC_Usage_Policy.md
+      - Disclaimer: en/Disclaimer.md
+      - Help: en/help.md
+
+  - Türkçe:
+      - Hızlı Başlangıç: tr/index.md
+      - Slurm ile Zamanlama: tr/slurm.md
+      - Eğitimler:
+          - TEKMER Kümesi Kullanımı: tr/tekmer-index.md
+          - Mevcut Yazılımlar:
+              - Matlab:
+                  - Genel Bilgi: tr/matlab/matlab.md
+                  - Kurulum Eğitimi: tr/matlab/pdf/matlab-tutorial.pdf
+                  - Slurm Wrapper Dosyaları: tr/matlab/pdf/matlab-parallel-slurm-plugin-main.zip
+              - Materials Studio:
+                  - Genel Bilgi: tr/ms/ms.md
+                  - Eğitim: tr/ms/pdf/ms-tutorial.pdf
+              - Comsol:
+                  - Genel Bilgi: tr/comsol/comsol.md
+                  - Eğitim: tr/comsol/pdf/comsol-tutorial.pdf
+              - Namd:
+                  - Genel Bilgi: tr/namd/namd.md
+                  - Eğitim: tr/namd/pdf/namd-tutorial.pdf
+              - Tensorflow:
+                  - Genel Bilgi: tr/tensorflow/tensorflow.md
+                  - Eğitim: tr/tensorflow/pdf/tensorflow-tutorial.pdf
+      - SSS: tr/faq.md
+      - Performans İyileştirme İpuçları: tr/performance.md
+      - TEKMER HPC Kullanım Politikası: tr/HPC_Kullanim_Politikasi.md
+      - Feragatname: tr/Feragatname.md
+      - Yardım: tr/help.md
+theme: readthedocs

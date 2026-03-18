@@ -1,0 +1,192 @@
+[![Documentation Status](https://readthedocs.org/projects/su-hpc-tutorials/badge/?version=latest)](https://su-hpc-tutorials.readthedocs.io/en/latest/?badge=latest)
+
+# TEKMER HPC CLUSTER QUICKSTART GUIDE
+
+## Scope of This Guide
+
+This guide explains how to access and run jobs on the TEKMER HPC Cluster.
+
+It does NOT cover:
+- Basic Linux usage
+- Programming models such as MPI, OpenMP or CUDA
+
+Users are expected to have:
+- Basic Linux command-line knowledge
+- Familiarity with their applications
+
+---
+
+## Getting an HPC Account
+
+Access to TEKMER HPC is managed via the user portal:
+
+👉 https://tekmer.performetrica.com/
+
+### Steps
+
+1. Register via the portal (**Online Registration**)  
+2. Verify your email and complete activation  
+3. Wait for approval (if required)  
+4. Your HPC account will be automatically provisioned  
+
+Accounts may be:
+- Individual (R&D users)
+- Organization-based (universities, companies)
+
+---
+
+## Important Usage Rules (Read Carefully)
+
+Improper usage can negatively impact all users on the system.
+
+Failure to follow these rules may result in account suspension.
+
+### Do NOT
+
+- Run computational jobs on login nodes  
+- Submit large-scale jobs without testing  
+- Abuse shared resources  
+
+### Always
+
+- Start with small test jobs  
+- Use the scheduler (Slurm)  
+- Monitor your jobs  
+
+---
+
+## HPC System Architecture
+
+The TEKMER HPC cluster consists of:
+
+- **Login Nodes** → login, job submission, light tasks  
+- **Compute Nodes** → actual computation  
+- **Storage Systems** → shared high-performance storage  
+
+Login nodes are NOT for computation.
+
+---
+
+## Connecting to the System
+
+### Windows
+
+Use an SSH client such as:
+- MobaXterm  
+- PuTTY  
+
+After installing the client, connect using:
+username@login.tekmer.performetrica.com
+
+
+### Linux and macOS
+
+Use SSH from terminal:
+
+ssh username@login.tekmer.performetrica.com
+
+
+---
+
+## File System Basics
+
+When you login, you start in your home directory (`~`).
+
+### Basic Commands
+
+pwd # current directory
+ls # list files
+cd dir # change directory
+cd .. # parent directory
+
+
+### File Operations
+mv file1 file2 # rename/move
+cp file1 dir/ # copy
+
+
+---
+
+## Data Transfer
+
+### Upload (local → cluster)
+scp file username@login.tekmer.performetrica.com:/path/
+
+
+### Download (cluster → local)
+scp username@login.tekmer.performetrica.com:/path/file
+
+
+---
+
+## Editing Files
+
+Use terminal-based editors:
+
+- vi  
+- nano  
+- emacs  
+
+---
+
+## Software Environment
+
+Available software is managed via modules:
+
+module avail
+module load <software>
+
+
+For additional software:
+Submit a request via the portal.
+
+---
+
+## Job Scheduling (Slurm)
+
+All computations MUST be submitted via Slurm.
+
+### Example Job Submission
+
+sbatch job.sh
+
+
+### Useful Commands
+
+
+squeue # list jobs
+scancel JOBID # cancel job
+sinfo # cluster status
+
+Jobs are scheduled based on:
+- Resource availability  
+- Fair usage policies  
+- Priority  
+
+---
+
+## Storage Policy (Critical)
+
+- HPC is NOT for long-term storage  
+- Always backup your data externally  
+- Remove unnecessary files after completion  
+
+Old or unused data may be deleted by administrators.
+
+---
+
+## Best Practices
+
+- Test jobs before scaling  
+- Use appropriate resources (CPU, memory, GPU)  
+- Avoid unnecessary large I/O operations  
+- Keep your directories organized  
+
+---
+
+## Support
+
+For help and support:
+
+📧 contact@performetrica.com  
+🌐 https://tekmer.performetrica.com/
