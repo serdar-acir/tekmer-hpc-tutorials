@@ -7,14 +7,21 @@
 NAMD (Nanoscale Molecular Dynamics), büyük biyomoleküler sistemlerin simülasyonu için geliştirilmiş yüksek performanslı bir yazılımdır.
 
 Aşağıdaki alanlarda yaygın olarak kullanılır:
+
 - Moleküler dinamik simülasyonları  
+
 - Protein yapı analizi  
+
 - İlaç geliştirme ve hesaplamalı kimya  
+
 - Büyük ölçekli paralel hesaplamalar  
 
 NAMD şu özellikler için optimize edilmiştir:
+
 - Paralel çalışma (MPI)  
+
 - HPC kümelerinde yüksek ölçeklenebilirlik  
+
 - CPU ve GPU hızlandırma  
 
 TEKMER HPC üzerinde NAMD compute node’lar üzerinde çalıştırılır ve hem küçük hem de büyük ölçekli simülasyonlar için uygundur.
@@ -26,7 +33,9 @@ TEKMER HPC üzerinde NAMD compute node’lar üzerinde çalıştırılır ve hem
 NAMD, TEKMER HPC kümesinde kurulu olup yetkili tüm kullanıcıların erişimine açıktır.
 
 Ayrıca:
+
 - İş istasyonlarında  
+
 - Yerel Linux ortamlarında  
 
 kullanılabilir.
@@ -61,6 +70,7 @@ NAMD işlemleri Slurm job scheduler üzerinden çalıştırılmalıdır.
 module load namd
 
 srun namd2 input.conf > output.log
+```
 
 ### Gönderim:
 
@@ -73,7 +83,6 @@ Büyük job’lardan önce küçük testler yapın
 
 Input dosyalarını optimize edin
 
-Mümkünse GPU kullanımı değerlendirin
 
 ## İyi Uygulamalar
 
@@ -89,4 +98,4 @@ Geçici dosyaları temizleyin
 
 Kurulum, kullanım ve optimizasyon desteği için:
 
-📧 contact@performetrica.com
+📧 [contact@performetrica.com](mailto:contact@performetrica.com)  

@@ -13,7 +13,9 @@ Bu yazılım genel kullanıma açık DEĞİLDİR. Lisanslı laboratuvar(lar) kap
 Windows için kurulum talimatlarına Eğitim (Tutorial) sayfası üzerinden ulaşabilirsiniz.
 
 Yazılım:
+
 - Kendi grafik arayüzü (GUI) üzerinden  
+
 - veya HPC login node üzerinden komut satırı ile  
 
 kullanılabilir.

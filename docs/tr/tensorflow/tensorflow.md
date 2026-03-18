@@ -59,31 +59,12 @@ python script.py
 
 ---
 
-## Örnek: GPU Üzerinde Çalıştırma
-
-```bash
-#!/bin/bash
-#SBATCH --job-name=tf_gpu
-#SBATCH --partition=defq
-#SBATCH --gres=gpu:1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=32G
-#SBATCH --time=04:00:00
-
-module load TensorFlow
-
-python train.py
-```
-
----
-
 ## Performans Önerileri
 
-- Eğitim için GPU kullanın
 - CPU thread sayısını ayarlayın:
-
+```bash
       export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-
+```
 - Oversubscription yapmayın
 - Bellek kullanımını izleyin
 
