@@ -21,6 +21,7 @@ All users of the TEKMER HPC infrastructure agree to comply with the following ru
 - After activation, users gain access to HPC resources.
 
 Users can:
+
 - Manage passwords  
 - Submit jobs  
 - View usage statistics  
@@ -41,6 +42,7 @@ via the portal.
 ## 4. Software Usage
 
 Users may run:
+
 - Licensed HPC-compatible software  
 - Custom-developed parallel applications  
 
@@ -52,8 +54,9 @@ New software must be requested via the portal or email prior to use.
 
 - The HPC system is **not intended for long-term data storage**.
 - Users must:
-  - Maintain backups  
-  - Remove data after use  
+
+    - Maintain backups  
+    - Remove data after use  
 
 System administrators may delete files older than **30 days** without prior notice if needed.
 
@@ -78,13 +81,15 @@ System administrators may delete files older than **30 days** without prior noti
 ## 8. Security Responsibilities
 
 Users are responsible for:
+
 - Protecting their credentials  
 - Reporting suspicious activity immediately  
 
 Contact:
-- 📧 contact@performetrica.com  
-- 📞 +90 216 275 78 70  
-- WhatsApp: +90 533 066 49 66  
+
+    - 📧 [contact@performetrica.com](mailto:contact@performetrica.com)
+    - 📞 [+90 216 275 78 70](tel:+902162757870)
+    - WhatsApp: [ +90 533 066 49 66](https://wa.me/905330664966)
 
 ---
 
@@ -97,6 +102,7 @@ Users must report any suspected vulnerabilities or security issues immediately.
 ## 10. Acknowledgement Requirement
 
 All publications using TEKMER HPC resources must:
+
 - Acknowledge TUZLA MUNICIPALITY TEKMER A.Ş.  
 - Be reported via the HPC portal  
 
@@ -105,6 +111,7 @@ All publications using TEKMER HPC resources must:
 ## 11. Prohibited Activities
 
 The following are strictly prohibited:
+
 - Illegal activities  
 - Actions compromising system security  
 - Unauthorized commercial usage  
@@ -129,6 +136,7 @@ Sensitive data (e.g., national security, confidential IP) may only be processed 
 ## 14. Enforcement
 
 Violation of this policy may result in:
+
 - Temporary suspension  
 - Permanent account termination  
 
@@ -136,5 +144,5 @@ Violation of this policy may result in:
 
 ## 15. Disclaimer
 
-All users are deemed to have accepted the **TEKMER HPC Disclaimer**.
+All users are deemed to have accepted the [**TEKMER HPC Dislaimer**](Feragatname.md).
 
