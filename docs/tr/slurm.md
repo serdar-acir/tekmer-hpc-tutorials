@@ -12,16 +12,19 @@ Bu doküman, Tekmer HPC kümesinde Slurm kullanarak iş (job) gönderme, izleme 
 
 ## Job Script Hazırlama
 
-Örnek scriptler şu dizinde bulunabilir:
+Örneğin scriptler şu dizinde bulunmaktadır:
 
-/perf/defq/sacir/
+/perf/shared/
 
 Kopyalayın ve düzenleyin:
 
 mkdir -p $HOME/workfolder
+
 cd $HOME/workfolder
-cp /perf/defq/sacir/example_submit.sh my_experiment.sh
-vim my_experiment.sh
+
+cp /perf/shared/example_submit.sh my_experiment.sh
+
+vi my_experiment.sh
 
 ---
 
@@ -33,6 +36,7 @@ sbatch my_experiment.sh
 
 ## Minimal Örnek
 
+```bash
 #!/bin/bash
 #SBATCH --job-name=test_job
 #SBATCH --partition=defq
@@ -44,17 +48,23 @@ sbatch my_experiment.sh
 #SBATCH --output=%x-%j.out
 
 echo "Çalıştığı node: $(hostname)"
-
+```
 ---
 
 ## Temel Komutlar
 
 sbatch job.sh
+
 squeue
+
 squeue -u $USER
+
 scancel <jobid>
+
 sinfo
+
 scontrol show job <jobid>
+
 sacct -j <jobid>
 
 ---
@@ -62,7 +72,6 @@ sacct -j <jobid>
 ## Tekmer HPC Notları
 
 - Varsayılan partition: defq
-- QoS kullanılmaz
 - Gereksiz kaynak talep etmeyin
 - Output için %x-%j.out kullanın
 
@@ -70,6 +79,7 @@ sacct -j <jobid>
 
 ## OpenMP Örneği
 
+```bash
 #!/bin/bash
 #SBATCH --partition=defq
 #SBATCH --ntasks=1
@@ -79,11 +89,13 @@ sacct -j <jobid>
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 ./my_openmp_program
+```
 
 ---
 
 ## MPI Örneği
 
+```bash
 #!/bin/bash
 #SBATCH --partition=defq
 #SBATCH --nodes=2
@@ -91,11 +103,12 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 #SBATCH --time=01:00:00
 
 srun ./my_mpi_program
-
+```
 ---
 
-## GPU Örneği (varsa)
+## GPU Örneği (kısıtlı)
 
+```bash
 #!/bin/bash
 #SBATCH --partition=defq
 #SBATCH --gres=gpu:1
@@ -104,12 +117,13 @@ srun ./my_mpi_program
 #SBATCH --time=02:00:00
 
 python train.py
-
+```
 ---
 
 ## İzleme
 
 squeue -u $USER
+
 sacct -j <jobid>
 
 ---
@@ -118,7 +132,6 @@ sacct -j <jobid>
 
 - ntasks ve cpus-per-task doğru kullanılmalı
 - OMP_NUM_THREADS ayarlanmalı
-- Oversubscription yapılmamalı
 - Toplam süre optimize edilmeli
 
 ---

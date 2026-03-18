@@ -6,10 +6,12 @@
 Bu doküman, TEKMER HPC Kümesine erişim ve iş çalıştırma süreçlerini açıklar.
 
 Şunları kapsamaz:
+
 - Temel Linux kullanımı  
 - MPI, OpenMP, CUDA gibi paralel programlama konuları  
 
 Kullanıcıların:
+
 - Temel Linux bilgisine  
 - Kullanacakları yazılıma hakim olması beklenir  
 
@@ -19,7 +21,9 @@ Kullanıcıların:
 
 TEKMER HPC erişimi kullanıcı portalı üzerinden sağlanır:
 
-👉 https://tekmer.performetrica.com/
+👉 <a href="https://tekmer.performetrica.com/" target="_blank" rel="noopener noreferrer">
+ TEKMER HPC Portal
+</a>
 
 ### Adımlar
 
@@ -67,6 +71,7 @@ Login node hesaplama için kullanılmaz.
 ### Windows
 
 SSH istemcisi kullanın:
+
 - MobaXterm  
 - PuTTY  
 
@@ -91,8 +96,11 @@ Giriş yaptığınızda home dizininizdesiniz (`~`).
 
 
 pwd
+
 ls
+
 cd klasor
+
 cd ..
 
 
@@ -100,6 +108,7 @@ cd ..
 
 
 mv dosya1 dosya2
+
 cp dosya1 dizin/
 
 
@@ -154,7 +163,9 @@ sbatch job.sh
 
 
 squeue
+
 scancel JOBID
+
 sinfo
 
 
@@ -162,7 +173,7 @@ sinfo
 
 ## Depolama Politikası
 
-- Sistem uzun süreli veri saklama için değildir  
+- Sistem uzun süreli veri saklama için değildir (30 gün)
 - Verilerinizi yedekleyin  
 - Gereksiz dosyaları silin  
 
@@ -170,8 +181,8 @@ sinfo
 
 ## İyi Uygulamalar
 
-- Küçük testlerle başlayın  
-- Doğru kaynakları seçin  
+- Küçük testlerle başlayın
+- Size tahsis edilen kaynağı seçin  
 - Gereksiz I/O işlemlerinden kaçının  
 - Dizinlerinizi düzenli tutun  
 
@@ -179,6 +190,7 @@ sinfo
 
 ## Destek
 
-📧 contact@performetrica.com  
-🌐 https://tekmer.performetrica.com/
+
+📧 [contact@performetrica.com](mailto:contact@performetrica.com)  
+🌐 [https://tekmer.performetrica.com/](https://tekmer.performetrica.com/)
 

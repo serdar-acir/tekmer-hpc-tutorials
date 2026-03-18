@@ -28,8 +28,6 @@ Kullanım alanları:
 - Paralel işler (MPI / OpenMP)
 - Simülasyon ve veri işleme
 
-> Not: **Tekmer HPC’de GPU bulunmamaktadır**
-
 ---
 
 ## Kaynakları Görüntüleme
